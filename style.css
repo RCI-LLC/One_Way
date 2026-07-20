@@ -168,7 +168,7 @@ a:hover {
 /* ---------- Gallery ---------- */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -181,7 +181,7 @@ a:hover {
 .gallery-photo {
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -237,7 +237,7 @@ a:hover {
 }
 
 .placeholder-photo {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   border-radius: 8px;
   background: linear-gradient(135deg, var(--accent), var(--primary));
   color: #ffffff;
@@ -326,5 +326,8 @@ a:hover {
   .nav-links a {
     margin-left: 0;
     margin-right: 1rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
