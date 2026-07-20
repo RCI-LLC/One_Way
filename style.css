@@ -9,11 +9,11 @@
   --card-bg: #ffffff;
   --border: #d9d9d9;
 }
- 
+
 * {
   box-sizing: border-box;
 }
- 
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -21,22 +21,22 @@ body {
   color: var(--text);
   line-height: 1.6;
 }
- 
+
 a {
   color: var(--accent);
   text-decoration: none;
 }
- 
+
 a:hover {
   color: var(--accent-dark);
 }
- 
+
 /* ---------- Header / Nav ---------- */
 .site-header {
   background: var(--primary);
   padding: 0 1.5rem;
 }
- 
+
 .nav-wrap {
   max-width: 1000px;
   margin: 0 auto;
@@ -45,18 +45,18 @@ a:hover {
   justify-content: space-between;
   padding: 1rem 0;
 }
- 
+
 .brand {
   color: #ffffff;
   font-size: 1.4rem;
   font-weight: bold;
 }
- 
+
 .brand:hover {
   color: #ffffff;
   opacity: 0.85;
 }
- 
+
 .nav-links a {
   color: #c2c2c2;
   margin-left: 1.5rem;
@@ -64,13 +64,13 @@ a:hover {
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
 }
- 
+
 .nav-links a:hover,
 .nav-links a.active {
   color: #ffffff;
   border-bottom: 2px solid var(--accent);
 }
- 
+
 /* ---------- Layout ---------- */
 .content {
   max-width: 1000px;
@@ -78,7 +78,7 @@ a:hover {
   padding: 2.5rem 1.5rem;
   min-height: 65vh;
 }
- 
+
 .site-footer {
   text-align: center;
   padding: 1.5rem;
@@ -86,24 +86,24 @@ a:hover {
   font-size: 0.9rem;
   border-top: 1px solid var(--border);
 }
- 
+
 /* ---------- Hero (Home) ---------- */
 .hero {
   text-align: center;
   padding: 3rem 1rem;
 }
- 
+
 .hero h1 {
   font-size: 2.4rem;
   margin-bottom: 0.5rem;
 }
- 
+
 .hero p {
   color: var(--muted);
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
- 
+
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -115,12 +115,12 @@ a:hover {
   cursor: pointer;
   font-size: 1rem;
 }
- 
+
 .btn:hover {
   background: var(--accent-dark);
   color: #ffffff;
 }
- 
+
 /* ---------- Hours banner ---------- */
 .hours-banner {
   text-align: center;
@@ -132,7 +132,7 @@ a:hover {
   margin: 0 auto 2rem;
   color: var(--text);
 }
- 
+
 /* ---------- Cards ---------- */
 .highlights {
   display: grid;
@@ -140,7 +140,7 @@ a:hover {
   gap: 1.5rem;
   margin-top: 2rem;
 }
- 
+
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -148,23 +148,23 @@ a:hover {
   padding: 1.5rem;
   text-align: center;
 }
- 
+
 .card h2 {
   margin-top: 0;
 }
- 
+
 /* ---------- Generic page section ---------- */
 .page-section h1 {
   margin-bottom: 1rem;
 }
- 
+
 .page-section code {
   background: #ececec;
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-size: 0.9em;
 }
- 
+
 /* ---------- Gallery ---------- */
 .gallery {
   display: grid;
@@ -172,12 +172,12 @@ a:hover {
   gap: 1.5rem;
   margin-top: 2rem;
 }
- 
+
 .gallery-item {
   text-align: center;
   min-width: 0;
 }
- 
+
 .gallery-photo {
   width: 100%;
   max-width: 100%;
@@ -185,8 +185,57 @@ a:hover {
   object-fit: cover;
   border-radius: 8px;
   display: block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
- 
+
+.gallery-photo:hover {
+  opacity: 0.85;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.8rem;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.lightbox-close:hover {
+  color: #cccccc;
+}
+
 .placeholder-photo {
   aspect-ratio: 4 / 3;
   border-radius: 8px;
@@ -198,12 +247,12 @@ a:hover {
   font-size: 2rem;
   font-weight: bold;
 }
- 
+
 .caption {
   margin-top: 0.5rem;
   color: var(--muted);
 }
- 
+
 /* ---------- Contact Form ---------- */
 .contact-form {
   display: flex;
@@ -211,13 +260,13 @@ a:hover {
   max-width: 500px;
   margin-top: 1.5rem;
 }
- 
+
 .contact-form label {
   font-weight: 600;
   margin-top: 1rem;
   margin-bottom: 0.3rem;
 }
- 
+
 .contact-form input,
 .contact-form textarea {
   padding: 0.7rem;
@@ -226,23 +275,23 @@ a:hover {
   font-size: 1rem;
   font-family: inherit;
 }
- 
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--accent);
 }
- 
+
 .contact-form .btn {
   margin-top: 1.5rem;
   align-self: flex-start;
 }
- 
+
 /* ---------- Flash / status messages ---------- */
 .flash-container {
   margin-bottom: 1.5rem;
 }
- 
+
 .flash {
   padding: 0.8rem 1rem;
   border-radius: 6px;
@@ -250,23 +299,23 @@ a:hover {
   font-weight: 500;
   display: none;
 }
- 
+
 .flash.show {
   display: block;
 }
- 
+
 .flash-success {
   background: #f0f0f0;
   color: #1a1a1a;
   border: 1px solid #b3b3b3;
 }
- 
+
 .flash-error {
   background: #1a1a1a;
   color: #ffffff;
   border: 1px solid #000000;
 }
- 
+
 /* ---------- Responsive ---------- */
 @media (max-width: 600px) {
   .nav-wrap {
@@ -279,4 +328,3 @@ a:hover {
     margin-right: 1rem;
   }
 }
- 
