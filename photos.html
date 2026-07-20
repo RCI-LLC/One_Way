@@ -28,32 +28,58 @@
       </p>
       <div class="gallery">
         <div class="gallery-item">
-          <img src="oneway.jpg" alt="One Way Powersports promotional flyer" class="gallery-photo">
+          <img src="oneway.jpg" alt="One Way Powersports promotional flyer" class="gallery-photo" onclick="openLightbox(this)">
           <p class="caption">One Way Powersports</p>
         </div>
         <div class="gallery-item">
-          <img src="rebuilt.jpg" alt="Transmission rebuild and FOX shocks install" class="gallery-photo">
+          <img src="rebuilt.jpg" alt="Transmission rebuild and FOX shocks install" class="gallery-photo" onclick="openLightbox(this)">
           <p class="caption">Transmission Rebuild &amp; FOX Shocks</p>
         </div>
         <div class="gallery-item">
-          <img src="steer.jpg" alt="Customer RZR 1000 mud build" class="gallery-photo">
+          <img src="steer.jpg" alt="Customer RZR 1000 mud build" class="gallery-photo" onclick="openLightbox(this)">
           <p class="caption">Customer Build &ndash; RZR 1000</p>
         </div>
         <div class="gallery-item">
-          <img src="front.jpg" alt="Front differential rebuild and suspension bushing work" class="gallery-photo">
+          <img src="front.jpg" alt="Front differential rebuild and suspension bushing work" class="gallery-photo" onclick="openLightbox(this)">
           <p class="caption">Front Diff Rebuild &amp; Suspension</p>
         </div>
         <div class="gallery-item">
-          <img src="diagnostics.jpg" alt="Machine up on the lift in the diagnostics bay" class="gallery-photo">
+          <img src="diagnostics.jpg" alt="Machine up on the lift in the diagnostics bay" class="gallery-photo" onclick="openLightbox(this)">
           <p class="caption">Diagnostics Bay</p>
         </div>
         <div class="gallery-item">
-          <img src="team.jpg" alt="Machines out on the trail after being trail-ready serviced" class="gallery-photo">
+          <img src="final.jpg" alt="Machines out on the trail after being trail-ready serviced" class="gallery-photo" onclick="openLightbox(this)">
           <p class="caption">Finished Look</p>
         </div>
       </div>
     </section>
   </main>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(imgEl) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
   <footer class="site-footer">
     <p>&copy; 2026 One-Way ATV Repair. Open since 2025. All rights reserved.</p>
   </footer>
