@@ -27,6 +27,11 @@ def contact():
     return send_from_directory(BASE_DIR, "contact.html")
 
 
+@app.route("/contracts.html")
+def contracts():
+    return send_from_directory(BASE_DIR, "contracts.html")
+
+
 # ---------- Static assets (CSS, images, etc.) ----------
 
 @app.route("/style.css")
