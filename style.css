@@ -1,12 +1,12 @@
 /* ---------- Base ---------- */
 :root {
-  --primary: #ffffff;
-  --accent: #ffffff;
+  --primary: #1a1a1a;
+  --accent: #333333;
   --accent-dark: #000000;
   --bg: #1AC1DD;
-  --text: #ffffff;
+  --text: #1a1a1a;
   --muted: #737373;
-  --card-bg: #16A2BB;
+  --card-bg: #ffffff;
   --border: #d9d9d9;
 }
 
